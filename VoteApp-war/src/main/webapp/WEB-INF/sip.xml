@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is needed for a call based application.Refer HelloWorld Sample 
+	service for more clarifications. 
+	
+	If the application you are writing is HTTP only, remove this file. 
+	You can refer DynamicTeamFormation Sample service in SDK for help -->
+<sip-app id="SipApp_ID">
+
+	<app-name>${serviceName}-${serviceVersion}
+	</app-name>
+	<display-name>${serviceName}-${serviceVersion}
+	</display-name>
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
+	<proxy-config>
+		<proxy-timeout>10800</proxy-timeout>
+	</proxy-config>
+
+	<servlet>
+		<description></description>
+		<display-name>CfSipServlet</display-name>
+		<servlet-name>CfSipServlet</servlet-name>
+		<servlet-class>com.avaya.collaboration.call.servlet.CfSipServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<description></description>
+		<display-name>NetworkConnectionServlet</display-name>
+		<servlet-name>NetworkConnectionServlet</servlet-name>
+		<servlet-class>com.avaya.media.mscontrol.ams.networkconnection.NetworkConnectionServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+    <servlet>
+        <description></description>
+        <display-name>ConferenceServlet</display-name>
+        <servlet-name>ConferenceServlet</servlet-name>
+        <servlet-class>com.avaya.media.mscontrol.ams.mixer.ConferenceServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+        </servlet>
+    <servlet>
+        <description></description>
+        <display-name>OutboundReferSipServlet</display-name>
+        <servlet-name>OutboundReferSipServlet</servlet-name>
+        <servlet-class>com.avaya.service.ipt.refer_connection.outbound.OutboundReferSipServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+	<servlet-selection>
+		<main-servlet>CfSipServlet</main-servlet>
+	</servlet-selection>
+
+	<listener>
+		<listener-class>com.avaya.service.ipt.invite_connection.listener.SipApplicationSessionListenerHandler
+		</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>com.avaya.service.ipt.util.locking.AsynchronousEventUtils
+		</listener-class>
+	</listener>
+</sip-app>

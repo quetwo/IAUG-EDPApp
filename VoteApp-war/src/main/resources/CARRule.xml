@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceRules name="${serviceName}" version="${serviceVersion}"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+
+	<!-- Following section is needed for call related applications. Refer HelloWorld Sample service for 
+		more clarifications. 
+		
+		If your application is HTTP only, please remove the SequencedServiceRule tags. You can refer DynamicTeamFormation Sample service 
+		in SDK for help on http only service-->
+		
+	<SequencedServiceRule phase="imsterm" order='125'
+		desc="Interested in imsterm phase">
+	</SequencedServiceRule>
+
+	<SequencedServiceRule phase="imsorig" order='25'
+		desc="Interested in imsorig phase">
+	</SequencedServiceRule>
+
+	<TerminatingServiceRule desc="Want to receive incoming INVITEs with ${serviceName} feature URI">
+		<FeatureURI>${serviceName}</FeatureURI>
+	</TerminatingServiceRule>	
+	
+</ServiceRules>

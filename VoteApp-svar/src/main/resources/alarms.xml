@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:alarms xmlns:p="http://archiveschemas.aus.avaya.com/snapinalarms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://archiveschemas.aus.avaya.com/snapinalarms alarms.xsd ">
+  <!-- <p:alarm>
+    <p:eventcode>EVENT_0001</p:eventcode>
+    <p:alarmDisplayText>Exception during service execution.</p:alarmDisplayText>
+    <p:severity>critical</p:severity>
+    <p:clearFlag>false</p:clearFlag>
+  </p:alarm> -->
+</p:alarms>

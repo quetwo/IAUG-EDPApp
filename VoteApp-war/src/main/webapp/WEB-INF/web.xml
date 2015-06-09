@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.5"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>${serviceName}-${serviceVersion}</display-name>
+
+	<!-- Following section is needed for call related applications. Refer HelloWorld Sample service for 
+		more clarifications. 
+		
+		If your application is HTTP only, please remove the servlet, servlet-mapping tags present below. 
+		You can refer DynamicTeamFormation Sample service in SDK for help  on http only service-->
+		
+	<servlet>
+		<display-name>CfSipServlet</display-name>
+		<servlet-name>CfSipServlet</servlet-name>
+		<servlet-class>com.avaya.collaboration.call.servlet.CfSipServlet</servlet-class>
+	</servlet>
+		<servlet>
+		<display-name>NetworkConnectionServlet</display-name>
+		<servlet-name>NetworkConnectionServlet</servlet-name>
+		<servlet-class>com.avaya.media.mscontrol.ams.networkconnection.NetworkConnectionServlet</servlet-class>
+	</servlet>
+    <servlet>
+        <display-name>ConferenceServlet</display-name>
+        <servlet-name>ConferenceServlet</servlet-name>
+        <servlet-class>com.avaya.media.mscontrol.ams.mixer.ConferenceServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <display-name>OutboundReferSipServlet</display-name>
+        <servlet-name>OutboundReferSipServlet</servlet-name>
+        <servlet-class>com.avaya.service.ipt.refer_connection.outbound.OutboundReferSipServlet</servlet-class>
+    </servlet>	
+    <servlet-mapping>
+		<servlet-name>CfSipServlet</servlet-name>
+		<url-pattern>/CfSipServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NetworkConnectionServlet</servlet-name>
+		<url-pattern>/NetworkConnectionServlet</url-pattern>
+	</servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConferenceServlet</servlet-name>
+        <url-pattern>/ConferenceServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OutboundReferSipServlet</servlet-name>
+        <url-pattern>/OutboundReferSipServlet</url-pattern>
+    </servlet-mapping>	
+</web-app>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service xmlns="http://archiveschemas.aus.avaya.com/properties"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://archiveschemas.aus.avaya.com/properties properties.xsd"
+    name="${serviceName}" version="${serviceVersion}" application="${serviceName}-${serviceVersion}">
+	<smgr>
+		<description>IAUG Voting Service</description>
+		<term_order>1</term_order>
+		<term_group>1</term_group>
+		<fs_component>true</fs_component>
+	</smgr>
+	<!-- <log_space>10MB</log_space> -->
+</service>

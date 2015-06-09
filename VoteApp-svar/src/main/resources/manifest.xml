@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service_description xmlns="http://archiveschemas.aus.avaya.com/aus"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://archiveschemas.aus.avaya.com/aus aus.xsd"
+    name="${serviceName}" version="${serviceVersion}"
+    sdk_version="${CE-SDK-Version}" sdk_build="${CE-SDK-Release}">
+	<component type="properties" filename="properties.xml" />
+	<component type="servlet" filename="VoteApp-ear-${project.version}.ear" />
+</service_description>
